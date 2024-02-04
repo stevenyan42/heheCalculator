@@ -1,26 +1,62 @@
-let num1 = 0;
-let num2 = 0;
-let operator = NaN;
+let num1 = "";
+let num2 = "";
+let operator = null;
 
 let num1Filled = false;
 let num2Filled = false;
 
-let one = document.querySelector(".one");
-let two = document.querySelector(".two");
-let three = document.querySelector(".three");
-let four = document.querySelector(".four");
-let five = document.querySelector(".five");
-let six = document.querySelector(".six");
-let seven = document.querySelector(".seven");
-let eight = document.querySelector(".eight");
-let nine = document.querySelector(".nine");
-let plus= document.querySelector(".plus");
-let subtract = document.querySelector(".subtract");
-let multiply = document.querySelector(".multiply");
-let divide = document.querySelector(".divide");
-let equal = document.querySelector(".equal")
+let numbers = document.querySelectorAll(".number");
+let operators = document.querySelectorAll(".operator");
+let equal = document.querySelector(".equal");
+let display = document.querySelector(".display");
 
-one.addEventListener("click", )
+function numberHandler(event) {
+    if (!num1Filled) {
+        num1 += event.target.value;
+        setDisplay(num1);
+        console.log(num1);
+    } else if (!num2Filled) {
+        num2 += event.target.value;
+        setDisplay(num2);
+        console.log(num2);
+    }
+}
+
+function operatorHandler(event) {
+    //set operator = value
+    operator = event.target.value;
+    console.log(operator);
+    if (!num1Filled) {
+        num1Filled = true;
+    } else {
+        //if two numbers were already filled
+        num1 = operate(Number(num1), Number(num2), operator);
+        num2 = "";
+        setDisplay(num1);
+        num1Filled = true;
+    }
+}
+
+function setDisplay(num) {
+    display.textContent = num;
+}
+
+function equalHandler() {
+    num1 = operate(Number(num1), Number(num2), operator);
+    num2 = "";
+    num1Filled = false;
+    setDisplay(num1);
+}
+
+numbers.forEach(number => {
+    number.addEventListener("click", numberHandler);
+});
+
+operators.forEach(number => {
+    number.addEventListener("click", operatorHandler);
+});
+
+equal.addEventListener("click", equalHandler)
 
 
 function add(a,b) {

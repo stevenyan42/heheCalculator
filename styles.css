@@ -1,6 +1,36 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 800px;
+    background-color: grey;
+    flex-shrink: 0;
+}
+
+.display {
+    background-color: grey;
+    color: white;
+}
+
+button {
+
 }

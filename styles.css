@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Roboto:wght@400;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -7,30 +10,87 @@
 }
 
 
-
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-
-}
-.container {
+    font-family: 'Quicksand', 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 400px;
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    width: 500px;
     height: 800px;
-    background-color: grey;
+    padding: 50px;
     flex-shrink: 0;
+    background-color: grey;
+    border-radius: 20px;
+    outline: 2px black solid;
+    box-shadow: 5px 5px 5px gray;
 }
 
 .display {
-    background-color: grey;
     color: white;
+    background-color: #1C1818;
+    height: 100px;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 10px 4px;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    
+}
+
+.previousDisplay {
+    flex: 1;
+    font-size: 1.325rem;
+}
+
+.currentDisplay {
+    flex: 1;
+    font-size: 2.325rem;
+}
+
+.row1, .row2, .row3, .row4, .row5 {
+    display: flex;
+    flex: 1;
+    padding: 4px;
+    justify-content: space-between;
 }
 
 button {
+    border-radius: 8px;
+    width: 90px;
+    font-size: 1.325rem;
+    outline: 1px black solid;
+}
 
+button:hover {
+    background-color: lightblue;
+}
+
+.bigButton {
+    width: 191px;
+}
+
+.clear {
+    background-color: #EE5E5E;
+    color: white;
+}
+
+.clear:hover {
+    background-color: pink;
 }
